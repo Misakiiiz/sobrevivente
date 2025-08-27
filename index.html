@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chimera-S Diário Clandestino - Blog de Sobrevivente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Verdana, sans-serif;
+      background: #fff;
+      color: #003300;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    #top-bar {
+      background: #660066;
+      color: white;
+      padding: 6px 12px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #cc0000;
+      flex-wrap: wrap;
+    }
+
+    #top-bar .logo {
+      font-weight: bold;
+      font-size: 20px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #00cc44;
+      text-shadow: 1px 1px 0 #330033;
+      cursor: pointer;
+    }
+
+    #top-bar .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    #top-bar input[type="text"] {
+      width: 180px;
+      padding: 5px;
+      font-size: 13px;
+      border: 1px solid #cc0000;
+      border-radius: 3px;
+    }
+
+    #top-bar button {
+      padding: 5px 10px;
+      background: #cc0000;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+    }
+
+    #top-bar button:hover {
+      background-color: #990000;
+    }
+
+    #top-links {
+      font-size: 13px;
+      background: #f0f0f0;
+      padding: 6px 12px;
+      border-bottom: 4px solid #660066;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    #top-links a {
+      color: #003300;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    #top-links a:hover {
+      text-decoration: underline;
+      color: #cc0000;
+    }
+
+    #main-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border: 2px solid #660066;
+    }
+
+    #left-menu {
+      width: 220px;
+      background: #f9f9f9;
+      border-right: 4px solid #cc0000;
+      padding: 15px;
+    }
+
+    #left-menu h2 {
+      font-size: 18px;
+      color: #660066;
+      margin-top: 0;
+      border-bottom: 3px solid #00cc44;
+      padding-bottom: 5px;
+      font-weight: bold;
+    }
+
+    #left-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #left-menu ul li {
+      margin: 10px 0;
+    }
+
+    #left-menu ul li a {
+      text-decoration: none;
+      color: #003300;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    #left-menu ul li a:hover {
+      color: #cc0000;
+      text-decoration: underline;
+    }
+
+    #content {
+      flex: 1;
+      padding: 25px;
+      background: #fff;
+      min-width: 300px;
+    }
+
+    #content header {
+      background: #660066;
+      color: #fff;
+      padding: 15px;
+      margin-bottom: 25px;
+      border-bottom: 4px solid #cc0000;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    #content header h1 {
+      margin: 0;
+      font-size: 30px;
+      text-shadow: 1px 1px 2px #330033;
+    }
+
+    #content header p {
+      margin: 8px 0 0 0;
+      font-style: italic;
+      font-size: 16px;
+      color: #99ff99;
+    }
+
+    article {
+      border: 3px solid #cc0000;
+      padding: 18px;
+      margin-bottom: 30px;
+      background: #f9fff9;
+      box-shadow: 4px 4px 10px #660066;
+      color: #003300;
+    }
+
+    article h2 {
+      margin-top: 0;
+      color: #660066;
+      border-bottom: 3px solid #00cc44;
+      padding-bottom: 5px;
+    }
+
+    article p, article ul {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #004400;
+    }
+
+    article ul {
+      padding-left: 22px;
+    }
+
+    article ul li {
+      margin-bottom: 8px;
+    }
+
+    #right-sidebar {
+      width: 270px;
+      background: #f9f9f9;
+      border-left: 4px solid #cc0000;
+      padding: 15px;
+      font-size: 14px;
+      color: #003300;
+    }
+
+    #right-sidebar h3 {
+      border-bottom: 3px solid #00cc44;
+      color: #660066;
+      margin-top: 0;
+      font-weight: bold;
+    }
+
+    #right-sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #right-sidebar ul li {
+      margin-bottom: 14px;
+    }
+
+    #right-sidebar ul li a {
+      text-decoration: none;
+      color: #006600;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    #right-sidebar ul li a:hover {
+      color: #cc0000;
+      text-decoration: underline;
+    }
+
+    .banner {
+      background: #cc0000;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px 5px;
+      margin-bottom: 20px;
+      border: 3px solid #660066;
+      cursor: default;
+      user-select: none;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      box-shadow: inset 2px 2px 5px #330033;
+    }
+
+    footer {
+      background: #660066;
+      color: white;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 13px;
+      margin-top: 40px;
+      border-top: 4px solid #cc0000;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    @media (max-width: 900px) {
+      #main-container {
+        flex-direction: column;
+      }
+
+      #left-menu, #right-sidebar {
+        width: 100%;
+        border: none;
+        border-top: 2px solid #cc0000;
+      }
+
+      #top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #top-bar .search-bar {
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      #top-bar input[type="text"] {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="top-bar">
+    <div class="logo">A Última Voz</div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar..." />
+      <button onclick="searchArticles()">OK</button>
+    </div>
+  </div>
+
+  <div id="top-links">
+    <a href="#dia-47">Diário</a>
+    <a href="#sintomas">Sintomas</a>
+    <a href="#conselhos">Conselhos</a>
+    <a href="#final">Mensagem Final</a>
+  </div>
+
+  <div id="main-container">
+    <nav id="left-menu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#dia-47">Dia 2 — Tá tudo errado</a></li>
+        <li><a href="#sintomas">O que eu tô vendo nas ruas</a></li>
+        <li><a href="#conselhos">Conselhos que ninguém vai te dar</a></li>
+        <li><a href="#final">Eu não sei o que vem depois</a></li>
+      </ul>
+      <img src="/imagens/prop2.jpg" alt="Propaganda 1" style="width: 200px;">
+      <br><br><br><br><br><br>
+      <img src="/imagens/prop5.jpg" alt="Propaganda 1" style="width: 190px;">
+
+      <aside id="related-sections">
+        <h3 style="color: purple; border-bottom: 2px solid green;">Seções Relacionadas</h3>
+        <ul style="list-style: none; padding: 0; font-family: Arial, sans-serif;">
+          <li><a href="relatos.html" style="color: darkgreen; text-decoration: none;">Dia 13 — Criança ou não, corre.</a></li>
+          <li><a href="riscos.html" style="color: darkgreen; text-decoration: none;">Dia 14 — Sempre odiei coisas molhadas.</a></li>
+          <li><a href="reconhecer.html" style="color: darkgreen; text-decoration: none;">Me perdi no dia. Por que eu continuo escrevendo?</a></li>
+          <li><a href="fuga.html" style="color: darkgreen; text-decoration: none;">Uma lembrança de merda.</a></li>
+          <li><a href="kael.html" style="color: darkgreen; text-decoration: none;">Pêssego em calda.</a></li>
+          <li><a href="Jason.html" style="color: darkgreen; text-decoration: none;">Isqueiro.</a></li>
+        </ul>
+      </aside>
+      <img src="/imagens/prop1.jpg" alt="Propaganda 1" style="width: 200px;">
+      <br><br><br><br><br><br>
+      <img src="/imagens/90s.gif" alt="Propaganda 1" style="width: 190px;">
+            <br><br><br><br><br><br>
+      <img src="/imagens/funnycat.gif" alt="Propaganda 1" style="width: 190px;">
+            <br><br><br><br><br><br>
+      <img src="/imagens/prop7.jpg" alt="Propaganda 1" style="width: 190px;">
+    </nav>
+
+    <section id="content">
+      <header>
+        <h1>Diário de uma Sobrevivente</h1>
+        <p><em>Relatos de uma última voz na humanidade para qualquer azarado que ainda esteja vivo nessa merda comigo.</em></p>
+      </header>
+
+      <article id="dia-47">
+        <h2>Dia 1 — Tá tudo errado</h2>
+        <p>Eu sei que falam pra gente ficar em casa, usar máscara, se cuidar e blá blá blá... mas não é só isso. Isso aqui é diferente, merda. Aquela história toda de “cura universal” era mentira. Acho que essa tal Chimera-S foi feita pra controlar a gente, talvez até matar quem eles acham “desnecessário”. Quem tá no poder sabe o que faz. Eles só querem silêncio e obediência. Filhos da Putaa!!!</p>
+      </article>
+
+      <article id="sintomas">
+        <h2>Dia 2 — O que ta rolando nas ruas</h2>
+        <p>Povo tá ficando louco, é fato. Febre, confusão, medo. Pessoas somem, outras mudam — não são elas mesmas mais. 
+        Tem barulho estranho na cabeça, uns gritos que só os infectados fazem. Se você começar a ouvir coisas que ninguém mais escuta, cuidado. Isso é só o começo.</p>
+      </article>
+
+      <article id="conselhos">
+        <h2>Dia 3 — Conselhos que ninguém vai te dar</h2>
+        <ul>
+          <li>Não confie em ninguém. Eles mentem.</li>
+          <li>Fique longe das multidões — e de qualquer gente com comportamento estranho.</li>
+          <li>Máscara não é garantia. Proteja o rosto e os pensamentos.</li>
+          <li>Documentos, equipamentos, tudo pode ser revistado. Cuidado ao se movimentar.</li>
+          <li>Se encontrar alguém “normal”, aguenta firme — pode estar infectado.</li>
+        </ul>
+      </article>
+
+
+      <article id="final">
+        <h2>Dia 4 — Suposto adeus?</h2>
+        <p>Se você está lendo isso, tente ficar vivo. Procure abrigo seguro, mas não espere salvação de ninguém. 
+        Essa coisa... essa Chimera-S não é só doença — é o fim do que achamos que é estar perto da humanidade. 
+        E pode ser que só quem resistir consiga mudar alguma coisa. Talvez resistir seja errado ou sla. Essa porra toda é muito louca. 
+        Estamos cada dia mais longe da humanidade. Malucos inconsequentes. Eu não sei o que será de mim ou desse mundo, mas se você ainda lê isso, eu ainda estou viva 
+        e vou atualizando para fazer você, meu caro leitor, também ter a sorte de continuar. Sorte... é. Boa sorte para todos nós. E se acabar por aqui... eu odeio seres humanos. </p>
+      </article>
+
+      <article id="sinais">
+        <h2>Dia 5 — Sinais antes da infecção</h2>
+        <p>A infecção não começa com febre nem ferida visível. A Chimera-S não é só um vírus, é um sussurro no fundo do seu crânio.
+          <p>Primeiro, o sono vira um campo de guerra. Você sonha com coisas que nunca viveu, acorda cansado, suando, como se tivesse corrido quilômetros.
+          Depois vem a fome — mas não qualquer fome. É um buraco dentro do estômago que nada preenche. E aí, a pior parte: a sensação de estar sendo observado. Mesmo sozinho. Mesmo no escuro.</p> 
+
+          <p>Teu corpo ainda parece teu, mas tua mente… começa a ter interferência. Depois desses sintomas... você começa a sentir apatia, ter pensamentos que antes não teria e principalmente, a perda de memória.
+          Cara, essa pra mim é a pior. Você esquece completamente quem você é, e isso me assusta pra caralho. 
+          Além disso, em questão mais física, veias aparecem ao redor de seu olho, mais olheiras fundas pela falta de sono e sangramento nasal. 
+          Se você acha que está sentindo alguma dessas coisas... cara... eu sinto muito por vc. 
+          E uma vez que entra… não tem volta.</p>
+        <p>Apenas posso dizer para você: Escreva tudo antes que você se perca. Se despeça das pessoas que ama (se ainda tiver alguém) e por fim, acabe com isso, é o mais indolor a se fazer.</p></p>
+      </article>
+
+      <article id="abrigo">
+        <h2>Dia 6 — Lugares seguros? Piada.</h2>
+        <p>Sabe o que descobri nesses anos todos? Que “abrigo seguro” é o caralho. Mito vendido por gente desesperada querendo acreditar que ainda existe ordem nesse apocalipse fodido.</p>
+        <p>As zonas de contenção viraram centros de incubação. Bunkers? Viraram túmulos fechados com cadeado. E aquelas estações militares que todo mundo idolatra? 
+          São piores do que campo de teste. Lá dentro, eles não estão tentando curar nada. Só estão observando… anotando… testando.</p>
+          <p>Teve uma vez que entrei num desses “refúgios comunitários”. A porta fechou atrás de mim e ninguém mais pôde sair. Uma semana depois, só eu restava. O resto virou parte dessa merda toda.</p>
+          <h3>Lição aprendida:</h3>
+        <ul>
+          <li><strong>Lugar seguro mesmo</strong> é onde você pode fugir rápido.</li>
+          <li><strong>Onde ninguém sabe</strong> que você tá.</li>
+          <li><strong>E onde você pode dormir</strong> com um olho aberto sem alguém tentando abrir tua cabeça.</li>
+        </ul>
+      </article>
+
+      <article id="equipamentos">
+        <h2>Dia 7 — Equipamentos que realmente ajudam. Se é pra morrer, que seja preparado</h2>
+        <p>Esquece essas merdas de rifle automático que todo mundo sonha. O que salva tua vida são as coisas que os “heróis” ignoram. Aqui vai uma lista, direto da prática:</p>
+        <ul>
+          <li>Lanterna UV: Fungos odeiam. E os infectados? Odeiam mais ainda. A luz UV não mata, mas expõe o que tá errado. Se alguém tiver com aquele brilho fúngico por baixo da pele, aquelas veias bizarras
+            … você vai ver.</li>
+          <li>Fones de ouvido com isolamento: Parece bobagem, mas os gritos dos babacas quebram mais do que janelas — quebram sanidade. Se você ouvir um deles de perto… vai desejar estar morto. 
+            Fones te salvam de virar mais um escravo desses merdinhas.</li>
+          <li>Faca pequena e afiada: Silenciosa. Rápida. Cabe no tornozelo. Já me tirou de três situações onde bala seria meu fim.</li>
+        </ul>
+      </article>
+
+      <article id="aliados">
+        <h2>Dia 8 — Alianças improváveis</h2>
+        <p>Eu sempre fui do tipo solitário. Menos gente, menos chances de alguém virar zumbi do fungo do capeta do teu lado. 
+          Mas, às vezes, a vida força alianças. E olha... até que funcionam.</p>
+          <p>Conheci um cara uma vez. Chamava-se Jason. Ex-engenheiro. Tinha metade do rosto queimado, mas um cérebro afiado. Ele entendia como o código S se propagava, como os infectados “sentiam” um ao outro. 
+            Usava isso pra nos manter fora do radar deles. Um gênio com um puta cheiro de álcool e dedo sempre no gatilho.</p>
+          <p>Teve também uma garota, Kael. Adolescente. Nunca soube se era surda ou só traumatizada demais pra falar. Mas ela lia lábios e entendia mais do que muito adulto. Ela me ensinou a mover sem fazer um som, 
+            a respirar de forma que nem o vento te nota.</p>
+            <p>Moral da história:
+              <ul>
+              <li>Às vezes, pra sobreviver, você precisa se juntar a quem você nunca escolheria.</li>
+              <li>E confiar por tempo suficiente pra não morrer naquele dia.</li>
+              </ul>
+              <p><strong>Mas no final… sempre esteja pronto pra puxar o gatilho primeiro.</strong></p>
+      </article>
+    </section>
+
+    <aside id="right-sidebar">
+            <img src="/imagens/prop3.jpg" alt="Propaganda 1" style="width: 200px;">
+      <div class="banner">Últimas Notícias</div>
+      <ul>
+        <li><a href="noticia1.html">Dia 9 — Eu matei alguém. E não era infectado. Provavelmente.</a></li>
+        <li><a href="noticia2.html">Dia 10 — O cheiro podre da infecção</a></li>
+        <li><a href="noticia3.html">Dia 11 — Não, eu não fui mordida (se é isso que você queria saber)</a></li>
+        <li><a href="noticia4.html">Dia 12 — Não grita 🤫</a></li>
+      </ul>
+            <img src="/imagens/prop4.jpg" alt="Propaganda 1" style="width: 200px;">
+                  <br><br><br><br><br><br>
+      <img src="/imagens/barbie.gif" alt="Propaganda 1" style="width: 230px;">
+            <br><br><br><br><br><br>
+      <img src="/imagens/catnyan.gif" alt="Propaganda 1" style="width: 220px;">
+            <br><br><br><br><br><br>
+      <img src="/imagens/90s.gif" alt="Propaganda 1" style="width: 190px;">
+            <br><br><br><br>
+      <img src="/imagens/prop6.jpg" alt="Propaganda 1" style="width: 190px;">
+            <br><br><br><br><br><br>
+      <img src="/imagens/cardrift.gif" alt="Propaganda 1" style="width: 190px;">
+    </aside>
+  </div>
+
+  <footer>
+    Copyright © 2000 — Sobrevivente
+  </footer>
+
+  <script>
+    function searchArticles() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const articles = document.querySelectorAll("article");
+
+      articles.forEach(article => {
+        const title = article.querySelector("h2").innerText.toLowerCase();
+        const text = article.innerText.toLowerCase();
+        if (title.includes(input) || text.includes(input)) {
+          article.style.display = "block";
+        } else {
+          article.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
