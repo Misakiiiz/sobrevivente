@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Chimera-S Diário Clandestino - Blog de Sobrevivente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
+<style>
     * {
       box-sizing: border-box;
     }
@@ -16,6 +16,11 @@
       margin: 0;
       padding: 0;
       font-size: 14px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     #top-bar {
@@ -263,26 +268,63 @@
     @media (max-width: 900px) {
       #main-container {
         flex-direction: column;
+        width: 100%;
       }
 
-      #left-menu, #right-sidebar {
+      #left-menu,
+      #right-sidebar {
         width: 100%;
         border: none;
         border-top: 2px solid #cc0000;
+        padding: 10px;
       }
 
       #top-bar {
         flex-direction: column;
         align-items: flex-start;
+        padding: 10px;
+      }
+
+      #top-bar .logo {
+        font-size: 18px;
+        margin-bottom: 10px;
       }
 
       #top-bar .search-bar {
-        margin-top: 10px;
+        margin-top: 5px;
         width: 100%;
+        justify-content: space-between;
       }
 
       #top-bar input[type="text"] {
-        width: 70%;
+        width: 100%;
+        max-width: 75%;
+      }
+
+      #top-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #content {
+        padding: 15px;
+      }
+
+      article {
+        padding: 15px;
+      }
+
+      article h2 {
+        font-size: 22px;
+      }
+
+      article p, article ul {
+        font-size: 14px;
+      }
+
+      footer {
+        font-size: 12px;
+        padding: 10px;
       }
     }
   </style>
@@ -313,9 +355,9 @@
         <li><a href="#conselhos">Conselhos que ninguém vai te dar</a></li>
         <li><a href="#final">Eu não sei o que vem depois</a></li>
       </ul>
-      <img src="./imagens/prop2.jpg" alt="Propaganda 1" style="width: 200px;">
+      <img src="prop2.jpg" alt="Propaganda 1" style="width: 200px;">
       <br><br><br><br><br><br>
-      <img src="./imagens/prop5.jpg" alt="Propaganda 1" style="width: 190px;">
+      <img src="prop5.jpg" alt="Propaganda 1" style="width: 190px;">
 
       <aside id="related-sections">
         <h3 style="color: purple; border-bottom: 2px solid green;">Seções Relacionadas</h3>
@@ -328,13 +370,13 @@
           <li><a href="Jason.html" style="color: darkgreen; text-decoration: none;">Isqueiro.</a></li>
         </ul>
       </aside>
-      <img src="./imagens/prop1.jpg" alt="Propaganda 1" style="width: 200px;">
+      <img src="prop1.jpg" alt="Propaganda 1" style="width: 200px;">
       <br><br><br><br><br><br>
-      <img src="./imagens/90s.gif" alt="Propaganda 1" style="width: 190px;">
+      <img src="/90s.gif" alt="Propaganda 1" style="width: 190px;">
             <br><br><br><br><br><br>
-      <img src="./imagens/funnycat.gif" alt="Propaganda 1" style="width: 190px;">
+      <img src="funnycat.gif" alt="Propaganda 1" style="width: 190px;">
             <br><br><br><br><br><br>
-      <img src="./imagens/prop7.jpg" alt="Propaganda 1" style="width: 190px;">
+      <img src="prop7.jpg" alt="Propaganda 1" style="width: 190px;">
     </nav>
 
     <section id="content">
@@ -441,17 +483,17 @@
         <li><a href="noticia3.html">Dia 11 — Não, eu não fui mordida (se é isso que você queria saber)</a></li>
         <li><a href="noticia4.html">Dia 12 — Não grita 🤫</a></li>
       </ul>
-            <img src="./imagens/prop4.jpg" alt="Propaganda 1" style="width: 200px;">
+            <img src="prop4.jpg" alt="Propaganda 1" style="width: 200px;">
                   <br><br><br><br><br><br>
-      <img src="./imagens/barbie.gif" alt="Propaganda 1" style="width: 230px;">
+      <img src="barbie.gif" alt="Propaganda 1" style="width: 230px;">
             <br><br><br><br><br><br>
-      <img src="./imagens/catnyan.gif" alt="Propaganda 1" style="width: 220px;">
+      <img src="catnyan.gif" alt="Propaganda 1" style="width: 220px;">
             <br><br><br><br><br><br>
-      <img src="./imagens/90s.gif" alt="Propaganda 1" style="width: 190px;">
+      <img src="90s.gif" alt="Propaganda 1" style="width: 190px;">
             <br><br><br><br>
-      <img src="./imagens/prop6.jpg" alt="Propaganda 1" style="width: 190px;">
+      <img src="prop6.jpg" alt="Propaganda 1" style="width: 190px;">
             <br><br><br><br><br><br>
-      <img src="./imagens/cardrift.gif" alt="Propaganda 1" style="width: 190px;">
+      <img src="cardrift.gif" alt="Propaganda 1" style="width: 190px;">
     </aside>
   </div>
 
@@ -477,3 +519,4 @@
   </script>
 </body>
 </html>
+
